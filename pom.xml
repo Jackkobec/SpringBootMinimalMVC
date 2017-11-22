@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>SpringBootMinimalMVC</groupId>
+    <artifactId>SpringBootMinimalMVC</artifactId>
+
+    <packaging>war</packaging><!--pack to .war jar by default-->
+    <name>SpringBootMinimalMVC</name>
+    <description>SpringBootMinimalMVC</description>
+    <url></url>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--Spring boot starter parent-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+    </parent>
+
+    <!--Properties-->
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--Dependencies-->
+    <dependencies>
+        <!-- Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Web with Tomcat + Embed -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSTL -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <!-- Need this to compile JSP-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Optional, for bootstrap -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+    </dependencies>
+
+    <!--Build-->
+    <build>
+        <plugins>
+            <!-- Package as an executable jar/war -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <finalName>SpringBootMinimalMVC</finalName><!--.war or .jar name after packaging-->
+    </build>
+</project>
